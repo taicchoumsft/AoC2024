@@ -1,0 +1,6 @@
+*.txt
+*.out*
+.fake
+.env
+.vscode
+.DS_Store
