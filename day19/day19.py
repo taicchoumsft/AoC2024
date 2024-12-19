@@ -3,37 +3,26 @@ import sys
 
 def solution1(patterns, arr):
     def f(s):
-        if s == "":
-            return True
-
+        if s == "": return True
         for p in patterns:
             if s.startswith(p):
                 if f(s[len(p):]):
                     return True
         return False
 
-    total = 0
-    for a in arr:
-        if f(a):
-            total += 1
-    return total
+    return sum([f(a) for a in arr])
 
 def solution2(patterns, arr):
     @lru_cache(None)
     def f(s):
-        if s == "":
-            return 1
-
+        if s == "": return 1
         total = 0
         for p in patterns:
             if s.startswith(p):
                 total += f(s[len(p):])
         return total
 
-    total = 0
-    for a in arr:
-        total += f(a)
-    return total
+    return sum([f(a) for a in arr])
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
