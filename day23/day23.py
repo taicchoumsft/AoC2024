@@ -1,8 +1,6 @@
 from collections import defaultdict
 import sys
 
-
-
 def solution1(adj_list):
     soln = set()
     def dfs(node, depth, path):
@@ -24,7 +22,8 @@ def solution1(adj_list):
 def solution2(adj_list):
     soln = set()
 
-    # reduces to finding the cliques of the graph
+    # reduces to finding maximal cliques in an undirected graph
+    # https://en.wikipedia.org/wiki/Bron%E2%80%93Kerbosch_algorithm
     def bron_kerbosch(R, P, X, graph):
         if not P and not X:
             soln.add(tuple(sorted(R)))
