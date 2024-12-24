@@ -57,12 +57,12 @@ def solution2(init, unknown):
 
     dot2 = graphviz.Digraph()
 
-    # known swaps for current input
+    # manually discovered swaps for current input
     mp = {
-          "qnw": "z15", "z15": "qnw", # correct 90 % confidence
+          "qnw": "z15", "z15": "qnw",
           "ncd": "nfj", "nfj": "ncd",
-          "cqr": "z20", "z20": "cqr", # correct (90% confidence)
-          "vkg": "z37", "z37": "vkg"} # correct (100%)
+          "cqr": "z20", "z20": "cqr",
+          "vkg": "z37", "z37": "vkg"}
 
     for k, (op, l, r) in unknown.items():
         color = "GREEN" # OR
